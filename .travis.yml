@@ -4,6 +4,8 @@ mono: latest
 sudo: false 
 dotnet: 2.1.300
 install:
-  - dotnet restore
-script:    # the following commands are just examples, use whatever your build process requires
-  - dotnet test ./tests/tests.csproj -f netcoreapp2.1
+  - nuget restore Lab1.sln
+  - nuget install xunit.runners -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Lab1.sln
+  - mono ./testrunner/xunit.runners.*/tools/xunit.console.clr4.exe ./Tests/bin/Release/Tests.dll
