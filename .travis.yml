@@ -2,12 +2,11 @@ language: csharp
 solution: Lab1.sln
 mono: none
 dotnet: 2.1.300
-services:
-  - docker
-before_script:
+install:
   - dotnet restore
-  - docker-compose build
-  - docker-compose run notes bundle exec rails db:test:prepare
 script:
   - dotnet test ./Tests/Tests.csproj
-  - docker-compose run --rm notes bundle exec rake spec
+deploy:
+  provider: heroku
+  app: rsoi-lab
+  api_key: 6e01fc46-2f75-44b7-a148-3b1c44752206
