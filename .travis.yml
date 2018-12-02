@@ -6,6 +6,7 @@ install:
   - dotnet restore
 script:
   - dotnet test ./Tests/Tests.csproj
+  - dotnet publish ./webapp/webapp.csproj
 deploy:
   provider: heroku
   app: rsoi-lab
