@@ -5,4 +5,4 @@ dotnet: 2.1.300
 install:
   - dotnet restore
 script:
-  - dotnet test .\Tests\Tests.csproj
+  - dotnet test ./Tests/Tests.csproj
