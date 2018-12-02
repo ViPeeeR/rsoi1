@@ -1,10 +1,9 @@
 language: csharp  
-sudo: required 
 solution: Lab1.sln
-dist: trusty  
-mono: none
+mono: latest
+sudo: false 
 dotnet: 2.1.300
-before_script:
+install:
   - dotnet restore
 script:    # the following commands are just examples, use whatever your build process requires
-  - ./build.sh
+  - dotnet test ./tests/tests.csproj -f netcoreapp2.1
