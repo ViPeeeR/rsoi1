@@ -6,3 +6,7 @@ install:
   - dotnet restore
 script:
   - dotnet test ./Tests/Tests.csproj
+deploy:
+  provider: heroku
+  app: rsoi-lab
+  api_key: 6e01fc46-2f75-44b7-a148-3b1c44752206
