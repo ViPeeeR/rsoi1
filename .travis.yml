@@ -1,5 +1,6 @@
 language: csharp  
 solution: Lab1.sln
+mono: none
 dotnet: 2.1.300
 install:
   - nuget restore Lab1.sln
