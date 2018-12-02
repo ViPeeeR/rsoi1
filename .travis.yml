@@ -3,7 +3,7 @@ sudo: required
 solution: Lab1.sln
 dist: trusty  
 mono: none
-dotnet: 2.1.5
+dotnet: dotnet-sdk-2.1
 before_script:
   - dotnet restore
 script:    # the following commands are just examples, use whatever your build process requires
