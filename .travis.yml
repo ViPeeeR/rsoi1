@@ -4,9 +4,8 @@ mono: none
 dotnet: 2.1.300
 services:
   - docker
-install:
-  - dotnet restore
 before_script:
+  - dotnet restore
   - docker-compose build
   - docker-compose run notes bundle exec rails db:test:prepare
 script:
